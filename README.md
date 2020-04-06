@@ -3,7 +3,26 @@ Indexing the articles in Sleeping For Less - https://www.akexorcist.com
 
 What's it about?
 ===========================
-Because I'm too lazy to buitl the index page (https://www.akexorcist.com/2013/02/android-article-index.html) for entire articles in Sleeping For Less (https://www.akexorcist.com). So I created this project to request all articles from the Blogger API into JSON then build it to HTML to replaces in index page. That's all!!
+Because I'm too lazy to buitl the index page (https://www.akexorcist.com/2013/02/android-article-index.html) for entire articles in Sleeping For Less (https://www.akexorcist.com). So I created this project to get the articles data from the Blogger API v3 into JSON then build it to HTML to replaces in index page with specific label. That's all!!
+
+How to use it?
+===========================
+• Clone this project.
+
+• Install the dependencies with `node install`
+
+• Create the `.env` in the project to provide your Blogger ID and API Key for Blogger API v3.
+
+```
+API_KEY=YOUR_BLOGGER_API_V3_KEY
+BLOG_ID=YOUR_BLOGGER_ID
+```
+
+• Customize the specific label for indexing in `converter.js` at `titles` (for indexing by label) and `excludes` (for exclude article by title) variables.
+
+• Run the project with `node index | pbcopy` the HTML result will copied to your clipboard.
+•
+Do what you want.
 
 Licence
 ===========================
