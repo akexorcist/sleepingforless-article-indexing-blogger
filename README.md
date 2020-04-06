@@ -3,7 +3,7 @@ Indexing the articles in Sleeping For Less - https://www.akexorcist.com
 
 What's it about?
 ===========================
-Because I'm too lazy to buitl the index page (https://www.akexorcist.com/2013/02/android-article-index.html) for entire articles in Sleeping For Less (https://www.akexorcist.com). So I created this project to get the articles data from the Blogger API v3 into JSON then build it to HTML to replaces in index page with specific label. That's all!!
+Because I'm too lazy to build the index page (https://www.akexorcist.com/2013/02/android-article-index.html) for entire articles in Sleeping For Less (https://www.akexorcist.com). So I created this project to get the articles data from the Blogger API v3 into JSON then build it to HTML to replaces in index page with specific label. That's all!!
 
 How to use it?
 ===========================
