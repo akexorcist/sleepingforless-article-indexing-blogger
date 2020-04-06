@@ -20,7 +20,7 @@ BLOG_ID=YOUR_BLOGGER_ID
 
 • Customize the specific label for indexing in `converter.js` at `titles` (for indexing by label) and `excludes` (for exclude article by title) variables.
 
-• Run the project with `node index | pbcopy` the HTML result will copied to your clipboard.
+• Run the project with `node index | pbcopy` the HTML result will copied to your clipboard when finished.
 
 • Do what you want.
 
