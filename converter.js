@@ -1,32 +1,24 @@
-exports.convert = (posts) => {
-    const titles = [
-        'Android Code',
-        'Android Design',
-        'Android Dev Tips'
-    ]
-    const excludes = [
-        'สารบัญบทความแอนดรอยด์'
-    ]
-    let html = titles.map(title => {
+exports.convert = (posts, labels, excludedTitles = []) => {
+    let html = labels.map(label => {
         let filteredPosts = posts
-            .filter(post => !excludes.includes(post.title))
-            .filter(post => post.labels != undefined && post.labels.includes(title))
+            .filter(post => !excludedTitles.includes(post.title))
+            .filter(post => post.labels != undefined && post.labels.includes(label))
             .sort(publishedDateSort)
-        return toHtml(title, filteredPosts)
+        return toHtml(label, filteredPosts)
     }).reduce((acc, value) => acc + value, '')
     return html
 }
 
-const toHtml = (titl, posts) => {
+const toHtml = (title, posts) => {
     let html = ''
-    html += '<h2>' + titl + '</h2>\n\r'
+    html += '<h2>' + title + '</h2>\n\r'
     html += posts.reduce(reduceToHtml, '')
     html += '<br />\n\r'
     return html
 }
 
 const reduceToHtml = (acc, value) => {
-    return acc + '• <a href="' + value.url + '" target="_blank">' + value.title + '</a><br />\n\r'
+    return acc + '• <a href="' + value.url.replace('http://', 'https://') + '" target="_blank">' + value.title + '</a><br />\n\r'
 }
 
 const publishedDateSort = (a, b) => {
